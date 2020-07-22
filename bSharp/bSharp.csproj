@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\Debug\netcoreapp3.1\assets\**" />
+    <EmbeddedResource Remove="bin\Debug\netcoreapp3.1\assets\**" />
+    <None Remove="bin\Debug\netcoreapp3.1\assets\**" />
+    <Page Remove="bin\Debug\netcoreapp3.1\assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\beeShop.png" />
+    <None Remove="Resources\CTR-LOADING-FINISHED.wav" />
+    <None Remove="Resources\CTR-LOADING.wav" />
+    <None Remove="Resources\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Caliburn.Micro" Version="4.0.136-rc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\netcoreapp3.1\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\bSharpUILib\bSharpUILib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\beeShop.png" />
+    <Resource Include="Resources\CTR-LOADING-FINISHED.wav" />
+    <Resource Include="Resources\CTR-LOADING.wav" />
+    <Resource Include="Resources\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
